@@ -1,0 +1,116 @@
+{% extends './layout.html' %}
+
+{% block tittle %}
+{{ data.titulo }}
+{% endblock %}
+
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/layout.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+{% endblock %}
+
+{% block body %}
+
+    <section class="img-section">
+        <div class="img-audio-wrapper">
+            <audio controls id="musica-fondo" autoplay loop>
+                <source src="{{ url_for('static', filename='audio/musica.mp3') }}" type="audio/mp3">
+                Tu navegador no soporta audio HTML5.
+            </audio>
+            <img class="matias-javiera" src="{{ url_for('static',filename='img/image.png') }}" alt="Imagen">
+        </div>
+    </section>
+
+
+    <section class="countdown-section">
+        <div class="countdown-wrapper">
+            <img id="marco" src="{{ url_for('static',filename='img/marco.png') }}" alt="Imagen">
+            <div class="circle-background">
+                <h1>Falta</h1>
+                <div id="countdown">
+                    <span id="days" class="number"></span><span class="colon">:</span>
+                    <span id="hours" class="number"></span><span class="colon">:</span>
+                    <span id="minutes" class="number"></span><span class="colon">:</span>
+                    <span id="seconds" class="number"></span>
+                </div>
+                <div class="labels">
+                    <span>días</span>
+                    <span>hrs</span>
+                    <span>min</span>
+                    <span>seg</span>
+                </div>
+                <img src="{{ url_for('static', filename='img/corazon.gif') }}" alt="Icono anillos" class="heart">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="ceremonia-section">
+        <div class="ceremonia-top">
+            <img src="{{ url_for('static', filename='img/anillos.gif') }}" alt="Icono anillos" class="ceremonia-icon">
+            <div class="ceremonia-banner">Ceremonia</div>
+        </div>
+    
+        <div class="ceremonia-info">
+            <div class="ceremonia-item">
+                <h3>Día</h3>
+                <p>Sábado 05 de Julio - 14:30 hrs</p>
+                <a href="https://calendar.app.google/YPqG7tFVjq7dYHfD7" class="ceremonia-button">AGENDAR</a>
+            </div>
+    
+            <div class="ceremonia-item">
+                <h3>Lugar</h3>
+                <p>Restaurante Nogaró</p>
+                <a href="http://wa.me/56982438971?text=Hola!%20Quiero%20confirmar%20mi%20asistencia%20a%20tu%20matrimonio" class="ceremonia-button">CONFIRMAR ASISTENCIA</a>
+                <p class="ceremonia-note">*Confirmar asistencia antes del 30 de Mayo*</p>
+            </div>
+    
+            <div class="ceremonia-item">
+                <h3>Dirección</h3>
+                <p>Av. Peru 100 - Viña del Mar</p>
+                <a href="https://maps.app.goo.gl/atnNTZ4apQ1aHMvq6?g_st=aw" class="ceremonia-button">¿CÓMO LLEGAR?</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="party-section">
+        <div class="titulo-party">
+            <h1>Fiesta</h1>
+        </div>
+        <div class="row d-flex justify-content-center flex-wrap">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Música</h5>
+                  <img src="{{ url_for('static', filename='img/musica.gif') }}" alt="Nota musical" class="icono" />
+                  <p class="card-text">¿Cual es la canción que no puede faltar en la playlist de la fiesta?</p>
+                  <a href="https://open.spotify.com/playlist/1CCVORJVMTdefjt4zHfbUw?si=01tj-iaFRa2b4p8f6O7iaQ&pt=a565ddabb2dada81d8660999b56e545d&pi=bHGzLDQ9Q-K5g" class="boton-fiesta">SUGERIR CANCIÓN</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Dress Code</h5>
+                  <img src="{{ url_for('static', filename='img/vestimenta.gif') }}" alt="vestimenta" class="icono" />
+                  <p class="card-text fw-bold fs-3">Formal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <section class="gift-section">
+        <h2>Regalos</h2>
+        <img src="{{ url_for('static', filename='img/regalo.gif') }}" alt="Icono de regalo" class="gift-icon">
+        <p class="gift-text">Si deseas regalarnos algo más que tu hermosa presencia...</p>
+        <a href="https://club.noviosparis.cl/home/couple-catalog/4920724" class="gift-button">LISTA DE REGALOS</a>
+      </section>
+
+
+      <section class="img-section">
+        <img class="matias-javiera" src="{{ url_for('static',filename='img/image.png') }}" alt="Imagen">
+    </section>
+
+{% endblock%}
